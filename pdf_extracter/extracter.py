@@ -3,17 +3,18 @@ from pdfminer.high_level import extract_text
 
 def get_text(pth):
     # Check extension of file
-    if pth[".":] != "pdf":
+    if pth[pth.index('.')+1:] != "pdf":
         assert "file must be pdf extension"
     # extract file
     text = extract_text(pth)
     # write text in new file.txt
-    with open(f"{pth[:'.']}.txt", "a") as f:
+    with open(f"{pth[pth.index('.')+1:]}.txt", "a") as f:
         f.write(text)
-
-    return "file is ready to translate!"
+    print("file is ready to translate!")
+    return 
 
 if __name__=="__main__":
-    pth = "./pdf_extracter/Data Scientist senior.docx"
+    # pth = "pdf_extracter/Data Scientist senior.docx"
+    pth = "ChoosingAWinningNiche.pdf"
 
     get_text(pth)
