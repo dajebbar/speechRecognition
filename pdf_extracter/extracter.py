@@ -8,7 +8,7 @@ def get_text(pth):
     # extract file
     text = extract_text(pth)
     # write text in new file.txt
-    with open(f"{pth[pth.index('.')+1:]}.txt", "a") as f:
+    with open(f"{pth[:pth.index('.')]}.txt", "a") as f:
         f.write(text)
     print("file is ready to translate!")
     return 
