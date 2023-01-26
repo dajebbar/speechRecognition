@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 "pdfminer.six" = "*"
 transformers = "*"
+torch = "*"
 
 [dev-packages]
 
