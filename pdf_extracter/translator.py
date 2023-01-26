@@ -31,7 +31,7 @@ def translate_text(file):
         text = f_content
         f_content = f.read(content_size)
         text_tr += translator(text)[0]["translation_text"] + "\n"
-    with open("", "a") as f_tr:
+    with open(f"{file[:file.index('.')]}.txt", "a") as f_tr:
         f_tr.write(text_tr)
     return
 
